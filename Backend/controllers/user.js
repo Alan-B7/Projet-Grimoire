@@ -42,7 +42,7 @@ exports.login = (req, res, next) => {
                             // Créer un token JWT contenant l'identifiant de l'utilisateur
                             const token = jwt.sign(
                                 { userId: user._id },
-                                'your_temporary_secret_key', // Utiliser la clé secrète définie dans les variables d'environnement
+                                'your_temporary_secret_key',
                                 { expiresIn: '24h' }
                             );
 

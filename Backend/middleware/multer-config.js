@@ -12,7 +12,7 @@ const MIME_TYPES = {
 
 const storage = SharpMulter({
 
-    // Définir le dossier de destination des fichiers téléchargés
+    // Dossier de destination des fichiers téléchargés
     destination: (req, file, callback) => {
         callback(null, 'images')
     },

@@ -10,9 +10,6 @@ const mongoose = require('mongoose');
 // Importer le module 'path' pour gérer les chemins de fichiers
 const path = require('path');
 
-// Utiliser dotenv pour charger les variables d'environnement
-require('dotenv').config();
-
 // Importer les routes:
 const booksRoutes = require('./routes/books'); // Livres
 const userRoutes = require('./routes/user'); // Utilisateurs
