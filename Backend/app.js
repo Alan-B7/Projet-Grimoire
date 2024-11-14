@@ -10,6 +10,8 @@ const mongoose = require('mongoose');
 // Importer le module 'path' pour gérer les chemins de fichiers
 const path = require('path');
 
+require('dotenv').config();
+
 // Importer les routes:
 const booksRoutes = require('./routes/books'); // Livres
 const userRoutes = require('./routes/user'); // Utilisateurs
@@ -18,7 +20,7 @@ const userRoutes = require('./routes/user'); // Utilisateurs
 const app = express();
 
 // Se connecter à MongoDB
-mongoose.connect('mongodb+srv://Test:TestOclass@cluster0.4hoo7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', 
+mongoose.connect(process.env.DB_URI, 
     { 
         useNewUrlParser: true,
         useUnifiedTopology: true 

@@ -3,7 +3,6 @@ const express = require('express');
 const router = express.Router();
 const auth = require('../middleware/auth');
 const multer = require('../middleware/multer-config');
-// const limiter = require('express-rate-limit');
 
 // Import du controlleur
 const booksCtrl = require('../controllers/books');

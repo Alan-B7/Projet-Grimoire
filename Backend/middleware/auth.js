@@ -6,7 +6,7 @@ module.exports = (req, res, next) => {
         const token = req.headers.authorization.split(' ')[1];
 
         // Vérifier et décoder le token à l'aide de la clé secrète
-        const decodedToken = jwt.verify(token, 'your_temporary_secret_key');
+        const decodedToken = jwt.verify(token, process.env.JWT_SECRET);;
 
         // Extraire l'ID utilisateur du token décodé
         const userId = decodedToken.userId;
@@ -20,6 +20,6 @@ module.exports = (req, res, next) => {
         next();
     } catch(error) {
         // En cas d'erreur de vérification du token, renvoyer une réponse d'erreur d'authentification
-        res.status(401).json({ error });
+        res.status(401).json({ error : 'Requête non authentifiée' });
     }
 };
